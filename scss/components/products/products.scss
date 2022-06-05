@@ -1,0 +1,161 @@
+.products{
+  background-color: map-get($colors, main-bg);
+  padding-bottom: 46px;
+
+  &__container {
+    position: relative;
+  }
+
+  &__filter {
+    max-width: $left-width;
+    position: absolute;
+    width: 100%;
+    left: calc(var(--bs-gutter-x) * .5);
+  }
+
+  &__tittle{
+    border-radius: 16px 16px 0 0;
+    background-color: map-get($colors, color-white);
+    padding: 13px 24px 29px 16px;
+    p{
+      font-size: map-get($font_sizes, font-size_xxs);
+      line-height: map-get($line-height, line-height_xs);
+    }
+  }
+
+  &__description{
+    color: #EB5757;
+    padding-left:  4px;
+  }
+  i.bi.bi-x-circle {
+    padding-right: 4px;
+  }
+  & .accordion{
+    .accordion-item{
+      border: map-get($colors, color-white);
+    }
+    .accordion-button{
+      background-color: map-get($colors, color-white);
+      font-size: map-get($font_sizes, font-size_md);
+      line-height: map-get($line-height, line-height_md);
+      @extend %font-roboto-bold;
+    }
+    .accordion-button:not(.collapsed){
+      color: map-get($colors, checkbox-color-title);
+    }
+    span{
+      color: map-get($colors, light-grey);
+      padding-left: 6px;
+    }
+  }
+  & .form-check-input:checked {
+    background-color: map-get($colors, checkbox-color-title);
+    border-color: map-get($colors, checkbox-color-title);
+  }
+  .accordion-button:not(.collapsed)::after{
+    background-image: url('../assets/images/filter_arrow.svg');
+    background-size: 12px;
+    transform: rotate(0deg);
+  }
+  .accordion-button:not(.collapsed) {
+    box-shadow: none;
+  }
+  .accordion-item {
+    border-bottom: 0;
+    position: relative;
+    &:before {
+      @extend %accordion-line;
+    }
+    .accordion-button {
+      box-shadow: none;
+      &.collapsed {
+        &:before {
+          @extend %accordion-line;
+        }
+      }
+    }
+  }
+  &__list{
+    padding-left: 30px;
+    margin-right: calc(-14px * 2);
+    margin-left: $left-width;
+  }
+  &__item-wrapper {
+    padding: 0 14px 14px 0;
+  }
+  &__item{
+    position: relative;
+    padding-bottom: 34px;
+    background: map-get($colors, color-white);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    &-tags{
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      gap: 4px;
+      z-index: 1;
+      a:hover{
+        transition: .3s;
+        transform: scale(1.1);
+      }
+    }
+    &:hover{
+      transition: .3s;
+      transform: scale(1.02);
+    }
+    &-img{
+      overflow: hidden;
+      position: relative;
+      min-height: 282px;
+    }
+    &-carousel{
+      position: absolute;
+      left:0;
+      transition: left .3s;
+    }
+    &:hover &-carousel {
+      left: -285px;
+    }
+    &-info{
+      font-size: map-get($font_sizes, font-size_md);
+      line-height: map-get($line-height, line-height_md);;
+      color: map-get($colors, font-color)
+    }
+    &-title{
+      @extend %font-roboto-bold;
+    }
+    &-price{
+      @extend %font-roboto-regular;
+    }
+  }
+  &__pagination{
+    padding: 20px 0 20px 30px;
+    margin: 0 -12px 0 216px;
+    li:not(:last-child){
+      margin-right: 14px;
+    }
+    &-link{
+      background-color: map-get($colors, color-green-icon);
+      border-radius: 45px;
+      padding: 7px 34px;
+      i{
+        color: map-get($colors, color-white);
+        font-size: 23px;
+      }
+    }
+    & .default{
+      background-color: map-get($colors, light-grey);
+    }
+    &-number{
+      background: map-get($colors, color-white);
+      border: 1px solid #E2E2E2;
+      border-radius: 100px;
+      padding: 6px 30px;
+      @extend %font-roboto-bold;
+      font-size: map-get($font_sizes, font-size_md);
+      line-height: map-get($line-height, line-height_md);
+      color:map-get($colors, font-color)
+    }
+  }
+}

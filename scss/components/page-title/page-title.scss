@@ -1,0 +1,32 @@
+.page-title {
+  background-color: map-get($colors, main-bg);
+  padding: 11px 0 37px 0;
+
+  & .breadcrumb {
+    position: relative;
+    font-size: map-get($font_sizes, font-size_xs);
+
+    li:not(:last-child) {
+      padding-right: 42px;
+      color: #43464C;
+    }
+  }
+  & .active {
+    a {
+      color: map-get($colors, active-green);
+    }
+  }
+  .breadcrumb-item + .breadcrumb-item::before {
+    @extend %before-after;
+    color: map-get($colors, light-grey);
+    width: 26px;
+    background-color: map-get($colors, light-grey);
+    height: 1px;
+    transform: translate(-35px, 12px);
+  }
+  h1 {
+    @extend %font-roboto-bold;
+    font-size: map-get($font_sizes, font-size_xxl);
+    line-height: map-get($line-height, line-height_lg);
+  }
+}

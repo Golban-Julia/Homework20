@@ -1,0 +1,45 @@
+%font-roboto-regular{
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+}
+%font-roboto-bold{
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+%main-font{
+  @extend %font-roboto-regular;
+  font-size: 15px;
+  line-height: 18px;
+  color: map-get($colors, font-color);
+}
+%before-after{
+  content: "";
+  display: block;
+  position: absolute;
+}
+%view-button{
+  background-color: white;
+  box-shadow: 0 4px 7px rgba(157, 157, 157, 0.1);
+  border-color: white;
+  font-size: map-get($font_sizes, font-sixe_sm);
+  line-height: map-get($line-height, line-height_xs);
+}
+%accordion-line{
+  content: '';
+  display: inline-block;
+  height: 2px;
+  width: 100%;
+  background-color: #E2E2E2;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  max-width: 184px;
+}
+%footer-form{
+  line-height: 18px;
+  border-radius: 45px;
+  border: 1px solid #515151;
+  @extend %font-roboto-regular;
+  background-color: map-get($colors, bg-color-footer);
+}

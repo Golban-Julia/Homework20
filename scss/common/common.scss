@@ -1,0 +1,19 @@
+.body{
+  background-color: #F4F4F4;
+  font-family: Lato, sans-serif;
+  @extend %main-font;
+}
+a{
+  text-decoration: none;
+  color: map-get($colors, font-color);
+}
+.btn-unstyled {
+  border: none;
+  outline: none;
+  background-color: initial;
+}
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1120px;
+  }
+}

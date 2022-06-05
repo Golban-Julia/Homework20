@@ -1,0 +1,51 @@
+.view{
+  $left-width: 216px;
+  background-color: map-get($colors, main-bg);
+  padding-bottom: 22px;
+
+  &__container {
+    position: relative;
+  }
+  &__dropdown {
+    max-width: $left-width;
+    position: absolute;
+    width: 100%;
+    left: calc(var(--bs-gutter-x) * .5);
+  }
+
+  .dropdown{
+    & .btn{
+      padding: 16px 40px 16px 25px;
+      color: map-get($colors, font-color);
+      border-radius: 40px;
+      @extend %view-button;
+    }
+  }
+  form{
+    position: relative;
+    padding-right: 14px;
+  }
+  &__input{
+    padding-left: 30px;
+    margin-right: calc(-14px * 2);
+    margin-left: $left-width;
+    .form-control{
+      position: relative;
+      padding: 14px 0 14px 39px;
+      border-radius: 54px;
+      color: map-get($colors, light-grey);
+      @extend %view-button;
+    }
+  }
+  & input::-webkit-input-placeholder{
+    color: map-get($colors, light-grey);
+  }
+  input[type=search] {
+    padding-right: 45px;
+  }
+  &__input-i {
+    position: absolute;
+    top: 7px;
+    right: 20px;
+  }
+}
